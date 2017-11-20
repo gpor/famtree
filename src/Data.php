@@ -3,9 +3,15 @@
 namespace Gpor\Famtree;
 
 
-class Tree extends GporBase
+class Data extends GporBase
 {
-    public $relations = [];
+    /**
+     * @var Grid
+     */
+    public $grid;
+
+    public $clientData;
+
     public $parents = [];
     public $siblings = [];
     public $partner;
@@ -13,8 +19,7 @@ class Tree extends GporBase
 
     public function defaultTemplate()
     {
-        return 'tree';
+        return 'data';
     }
 
-    public $datasource;
 }
