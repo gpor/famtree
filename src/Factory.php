@@ -122,7 +122,7 @@ class Factory
             } else {
                 $instance->grid->cellPlot($x, $y, self::newPlot('top-right-left'));
                 $x--;
-                for ($j = $n-1; $j > 0; $j--) {
+                for ($j = $i; $j > 0; $j--) {
                     if ($j === 1) {
                         $instance->grid->cellPlot($x, $y, self::newPlot('right-bottom'));
                         $y++;
