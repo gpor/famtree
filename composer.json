@@ -3,12 +3,18 @@
     "description": "Simple, 1 layer family tree diagram",
     "type": "library",
     "license": "MIT",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Lee Stevens",
             "email": "lee@dcode.com.au"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Gpor\\Famtree\\": "gpor/famtree/src"
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
