@@ -1,0 +1,14 @@
+{
+    "name": "gpor/famtree",
+    "description": "Simple, 1 layer family tree diagram",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Stevens",
+            "email": "lee@dcode.com.au"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
