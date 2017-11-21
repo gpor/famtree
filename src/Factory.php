@@ -67,7 +67,7 @@ class Factory
         foreach ($instance->siblings as $i => $record) {
             self::plotRelationship($instance, 'sibling', $record, $i, count($instance->siblings));
         }
-        self::plotRelationship($instance, 'partner', $instance->partner, 0, 1);
+        if ($instance->partner !== null) self::plotRelationship($instance, 'partner', $instance->partner, 0, 1);
         foreach ($instance->children as $i => $record) {
             self::plotRelationship($instance, 'child', $record, $i, count($instance->children));
         }

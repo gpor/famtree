@@ -22,6 +22,17 @@ class Grid extends GporBase
     public function cellPlot($x, $y, GridCellPlot $plot)
     {
         $this->rows[$y]->cells[$x]->plot = $plot;
+        $this->checkEdges($x, $y);
+    }
+
+    public function cellRecord($x, $y, GridCellRecord $record)
+    {
+        $this->rows[$y]->cells[$x]->record = $record;
+        $this->checkEdges($x, $y);
+    }
+
+    private function checkEdges($x, $y)
+    {
         if ($this->leftEdge === null || $x < $this->leftEdge) {
             $this->leftEdge = $x;
         }
@@ -36,17 +47,15 @@ class Grid extends GporBase
         }
     }
 
-    public function cellRecord($x, $y, GridCellRecord $record)
-    {
-        $this->rows[$y]->cells[$x]->record = $record;
-    }
-
     public function crop()
     {
         $new_rows = [];
-        for ($i = $this->topEdge; $i <= $this->bottomEdge + 1; $i++) {
-            $new_rows[] = $this->rows[$i]->sidesCropped($this->leftEdge, $this->rightEdge);
+        foreach ($this->rows as $row) {
+            $new_rows[] = $row->sidesCropped($this->leftEdge, $this->rightEdge);
         }
+//        for ($i = $this->topEdge; $i <= $this->bottomEdge + 1; $i++) {
+//            $new_rows[] = $this->rows[$i]->sidesCropped($this->leftEdge, $this->rightEdge);
+//        }
         $this->rows = $new_rows;
     }
 }

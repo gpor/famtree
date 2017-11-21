@@ -3,7 +3,7 @@
     "description": "Simple, 1 layer family tree diagram",
     "type": "library",
     "license": "MIT",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "authors": [
         {
             "name": "Lee Stevens",
